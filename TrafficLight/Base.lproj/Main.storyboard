@@ -11,6 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -56,6 +57,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="makeStartAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ixs-ti-gCM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,10 +71,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l8l-1S-dgG" secondAttribute="bottom" constant="150" id="lHD-aO-hFu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLigntsLabel" destination="o7g-Qq-VsD" id="bmN-fw-Ygs"/>
+                        <outlet property="redLightsLabel" destination="qzX-8r-OLF" id="APr-b0-O5C"/>
+                        <outlet property="toggleButton" destination="l8l-1S-dgG" id="UOT-hn-jPT"/>
+                        <outlet property="yellowLightsLabel" destination="Swt-dX-XSh" id="Ilm-oL-Waq"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="38"/>
+            <point key="canvasLocation" x="555" y="-348"/>
         </scene>
     </scenes>
     <resources>

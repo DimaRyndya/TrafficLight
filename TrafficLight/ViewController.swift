@@ -8,12 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var redLightsLabel: UIView!
+    @IBOutlet var yellowLightsLabel: UIView!
+    @IBOutlet var greenLigntsLabel: UIView!
+    @IBOutlet var toggleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        redLightsLabel.layer.cornerRadius = 57.5
+        yellowLightsLabel.layer.cornerRadius = 57.5
+        greenLigntsLabel.layer.cornerRadius = 57.5
+        toggleButton.layer.cornerRadius = 10
     }
 
-
+    @IBAction func makeStartAction() {
+        
+    }
+    
+    
 }
 
