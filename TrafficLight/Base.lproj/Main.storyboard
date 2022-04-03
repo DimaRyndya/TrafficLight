@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EPK-Kc-2Ha">
                                 <rect key="frame" x="149.5" y="137" width="115" height="375"/>
                                 <subviews>
-                                    <view alpha="0.30000001192092896" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="qzX-8r-OLF">
+                                    <view alpha="0.29999999999999999" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="qzX-8r-OLF">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
