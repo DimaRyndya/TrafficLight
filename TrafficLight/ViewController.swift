@@ -41,11 +41,11 @@ class ViewController: UIViewController {
         } else if self.yellowLightsLabel.backgroundColor == UIColor.yellow {
 
             yellowLightsLabel.backgroundColor = UIColor.yellow.withAlphaComponent(0.3)
-            greenLigntsLabel.backgroundColor = UIColor.systemGreen
+            greenLigntsLabel.backgroundColor = UIColor.green
             
         } else {
             greenLigntsLabel.backgroundColor = UIColor.green.withAlphaComponent(0.3)
-            toggleButton.setTitle("START", for: .normal)
+            redLightsLabel.backgroundColor = UIColor.red
         }
     }
     
