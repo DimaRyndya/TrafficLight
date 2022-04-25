@@ -7,12 +7,22 @@
 
 import UIKit
 
+enum CurrentLignt {
+    case red, yellow, green
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet var redLightsLabel: UIView!
     @IBOutlet var yellowLightsLabel: UIView!
     @IBOutlet var greenLigntsLabel: UIView!
     @IBOutlet var toggleButton: UIButton!
+    
+    private var currentLight = CurrentLignt.red
+    private let lightsOn: CGFloat = 1
+    private let lightsOff: CGFloat = 0.3
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,31 +31,30 @@ class ViewController: UIViewController {
         yellowLightsLabel.layer.cornerRadius = 57.5
         greenLigntsLabel.layer.cornerRadius = 57.5
         toggleButton.layer.cornerRadius = 10
-        redLightsLabel.backgroundColor = UIColor.red.withAlphaComponent(0.3)
-        yellowLightsLabel.backgroundColor = UIColor.yellow.withAlphaComponent(0.3)
-        greenLigntsLabel.backgroundColor = UIColor.green.withAlphaComponent(0.3)
+        redLightsLabel.alpha = lightsOff
+        yellowLightsLabel.alpha = lightsOff
+        greenLigntsLabel.alpha = lightsOff
+        view.backgroundColor = .black
     }
     
 
     @IBAction func makeStartAction() {
-        if self.redLightsLabel.backgroundColor == UIColor.red.withAlphaComponent(0.3) && self.yellowLightsLabel.backgroundColor == UIColor.yellow.withAlphaComponent(0.3) && greenLigntsLabel.backgroundColor == UIColor.green.withAlphaComponent(0.3) {
-            
-            redLightsLabel.backgroundColor = UIColor.red
-            toggleButton.setTitle("NEXT", for: .normal)
-            
-        } else if self.redLightsLabel.backgroundColor == UIColor.red {
-    
-            redLightsLabel.backgroundColor = UIColor.red.withAlphaComponent(0.3)
-            yellowLightsLabel.backgroundColor = UIColor.yellow
-
-        } else if self.yellowLightsLabel.backgroundColor == UIColor.yellow {
-
-            yellowLightsLabel.backgroundColor = UIColor.yellow.withAlphaComponent(0.3)
-            greenLigntsLabel.backgroundColor = UIColor.green
-            
-        } else {
-            greenLigntsLabel.backgroundColor = UIColor.green.withAlphaComponent(0.3)
-            redLightsLabel.backgroundColor = UIColor.red
+        
+        toggleButton.setTitle("NEXT", for: .normal)
+        
+        switch currentLight {
+        case .red:
+            greenLigntsLabel.alpha = lightsOff
+            redLightsLabel.alpha = lightsOn
+            currentLight = .yellow
+        case .yellow:
+            redLightsLabel.alpha = lightsOff
+            yellowLightsLabel.alpha = lightsOn
+            currentLight = .green
+        case .green:
+            yellowLightsLabel.alpha = lightsOff
+            greenLigntsLabel.alpha = lightsOn
+            currentLight = .red
         }
     }
     
